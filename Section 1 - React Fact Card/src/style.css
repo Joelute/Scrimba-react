@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    width: 550px;
+}
+
+
+nav.dark body{
+    background-color: #FFFFFF;
+}
+
+nav > h3 {
+    margin: 0;
+}
+
+nav.dark {
+    background-color: #21222A;
+}
+
+nav {
+    display:flex;
+    align-items: center;
+    padding: 30px 25px;
+    height: 90px;
+    background-color: #FFFFFF;
+}
+
+.nav--logo_icon {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.nav--logo_text {
+    margin-right: auto;
+    color: #61dafb;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+main.dark {
+    background-color: #282d35;
+    color: white;
+    background-image: url(./images/react-icon-dark.png);
+    background-size: 49%;
+}
+
+main {
+    padding: 57px 27px;
+    height: 100%;
+    flex: 1 1 auto;
+    background-image: url(./images/react-icon-light.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.main--title {
+    margin: 0;
+    font-size: 39px;
+    letter-spacing: -0.05em;
+}
+
+.main--facts {
+    margin-top: 46px;
+    max-width: 400px;
+}
+
+.main--facts > li {
+    line-height: 19px;
+    padding-block: 10px;
+}
+
+.main--facts > li::marker {
+    color: #61dafb;
+    font-size: 1.4rem;
+}
+
+.toggler {
+    display: flex;
+    align-items: center;
+}
+
+.toggler--slider {
+    width: 2rem;
+    height: 1rem;
+    border-radius: 15px;
+    margin: 0 1rem;
+    display: flex;
+    background-color: #2B283A;
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: content-box;
+    padding: 0 2px;
+} 
+
+nav.dark .toggler--slider {
+    border-color: white;
+    background-color: #F5F5F5;
+    justify-content: flex-end;
+}
+
+.toggler--light {
+    color: #2B283A;
+}
+
+nav.dark .toggler--light {
+    color: #918E9B;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+nav.dark .toggler-dark {
+    color: #FFFFFF;
+}
+
+.toggler--slider--circle {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 15px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+nav.dark .toggler--slider--circle {
+    background-color: black;
+}
