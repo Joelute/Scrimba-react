@@ -7,10 +7,24 @@ function App() {
 
   const [start, setStart] = useState(true)
   const [first, setFirst] = useState(false)
-  const [second, setSecond] = useState(false)
+  const [score, setScore] = useState({
+    shown: false,
+    score: 0,
+    total: 0
+  })
 
   const [trivia, setTrivia] = useState([])
-
+  /* Trivia object = [{
+    allAnswer: [{
+      answer: string
+      isCorrect: bool
+      isSelect: bool
+      id: id
+    }]
+    question: string
+    id: id
+  }]
+  */
   const handleStart = () => {
     setStart(prevState => !prevState)
     setFirst(prevState => !prevState)
@@ -28,6 +42,29 @@ function App() {
         }
       })
     )
+  }
+
+  const handleSubmit = () => {
+    setScore(prevState => {
+      const total = trivia.length
+      let score = 0;
+      trivia.map(triviaLoop => 
+        triviaLoop.allAnswer.map(answerLoop => {
+          if (answerLoop.isCorrect && answerLoop.isSelect) {
+            score = score + 1
+            return 0
+          } else {
+            return 0
+          }
+        }
+      ))
+      return {
+        ...prevState,
+        score: score,
+        total: total,
+        shown: true
+      }
+    })
   }
 
   useEffect(() => {
@@ -75,7 +112,10 @@ function App() {
       {first && 
         <div className='quiz--main'>
           {quizElement}
-          <button className='submit--button'>Check Answers</button>
+          <div className='submit'>
+            {score.shown ? <h1 className='submit--score'>You scored {score.score}/{score.total} correct answers</h1>: ''}
+            <button className='submit--button' onClick={handleSubmit}>Check Answers</button>
+          </div>
         </div>}
     </div>
   );
