@@ -1,0 +1,50 @@
+* {
+  background: black;
+    color: #00b800;
+    margin:0;
+    padding: 0;
+    padding-top: 10px;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+body {
+  font-weight: 400;
+}
+
+.app--start {
+  font-family: 'Press Start 2P', cursive;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  color: black;
+  background: #00b800;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+
+.app--title 
+.app--words {
+  font-size: 20px;
+  text-align:center;
+}
+
+.app--textarea {
+  font-family: 'Press Start 2P', cursive;
+  border: 3px solid black;
+  width: 90%;
+  margin: 0 auto;
+  outline: none;
+  height: 200px;
+  background-color: #00b800;
+  color: black;
+  padding: 10px;
+}
+
+.app--textarea:disabled {
+  background-color: #a5a2a2;
+}
+
+.app--start:disabled {
+  cursor: not-allowed;
+}
