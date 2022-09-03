@@ -1,4 +1,4 @@
-import Profile from '../images/profile.jpg'
+import Profile from '../../../assets/profile.jpg'
 
 export default function Info() {
     return (
