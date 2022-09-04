@@ -1,11 +1,11 @@
 import Info from './components/Info'
 import About from './components/About'
 import Interest from './components/Interests'
-import './style.css'
+import styles from './BusinessCard.module.css'
 
 function BusinessCard() {
   return (
-    <div className="App">
+    <div className={styles['BusinessCard']}>
       <Info />
       <About />
       <Interest />

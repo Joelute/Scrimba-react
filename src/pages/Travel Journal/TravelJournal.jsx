@@ -1,9 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar.js';
-import Card from './components/Card.js'
-import Data from './data.js'
-import './style.css'
+import Navbar from './components/Navbar';
+import Card from './components/Card'
+import Data from './data'
+import styles from './TravelJournal.module.css'
 
 function App() {
   let cardElements = Data.map(cardData => {
@@ -18,7 +16,7 @@ function App() {
   )})
 
   return (
-    <div className="App">
+    <div className={styles["TravelJournal"]}>
       <Navbar />
       {cardElements}
     </div>
