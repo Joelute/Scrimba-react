@@ -1,3 +1,5 @@
+import dieStyles from '../Tenzies.module.css'
+
 export default function Die({value, id, isHeld, changeHeld, disabled}) {
     const styles = {
         backgroundColor : isHeld? '#59E391' : 'white',
@@ -5,8 +7,8 @@ export default function Die({value, id, isHeld, changeHeld, disabled}) {
     }
 
     return (
-        <div className='game--die' onClick={disabled? '' : () => changeHeld(id)} style = {styles}>
-            <h2 className = 'die--number'>{value}</h2>
+        <div className={dieStyles['game--die']} onClick={disabled? '' : () => changeHeld(id)} style = {styles}>
+            <h2 className = {dieStyles['die--number']}>{value}</h2>
         </div>
     )
 }

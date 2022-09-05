@@ -1,5 +1,5 @@
 import Die from './component/Die';
-import './App.css';
+import styles from './Tenzies.module.css'
 import { useEffect, useRef, useState } from 'react';
 import Confetti from 'react-confetti'
 
@@ -92,33 +92,35 @@ function App() {
   }, [dice])
 
   return (
-      <main className='game'>
+    <div className={styles['container']}>
+      <main className={styles['game']}>
         {tenzies && <Confetti></Confetti>}
         {playGame ?
-         <div className='game--board'>
-          <div className='score--container'>
-            <div className='score--time'>
-              <h1 className='score--title'>Time</h1>
-              <h2 className='score--value'>{timer}</h2>
+         <div className={styles['game--board']}>
+          <div className={styles['score--container']}>
+            <div className={styles['score--time']}>
+              <h1 className={styles['score--title']}>Time</h1>
+              <h2 className={styles['score--value']}>{timer}</h2>
             </div>
-            <div className='score--rolls'>
-              <h1 className='score--title'>Total rolls</h1>
-              <h2 className='score--value'>{totalRoll}</h2>
+            <div className={styles['score--rolls']}>
+              <h1 className={styles['score--title']}>Total rolls</h1>
+              <h2 className={styles['score--value']}>{totalRoll}</h2>
             </div>
           </div>
-          <div className='die--container'>
+          <div className={styles['die--container']}>
             {dieElement}
           </div>
-          <button className='game--button' onClick={tenzies? newGame: rollDice}>{tenzies? 'New Game': 'Roll'}</button>
+          <button className={styles['game--button']} onClick={tenzies? newGame: rollDice}>{tenzies? 'New Game': 'Roll'}</button>
         </div> :
-        <div className='game--board'>
-          <h1 className='game--title'>Tenzies</h1>
-          <h2 className='game--description'>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
-          <button className='game--button' onClick = {startGame}>Play</button>
+        <div className={styles['game--board']}>
+          <h1 className={styles['game--title']}>Tenzies</h1>
+          <h2 className={styles['game--description']}>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
+          <button className={styles['game--button']} onClick = {startGame}>Play</button>
         </div>
         }
-
       </main>
+    </div>
+      
   );
 }
 

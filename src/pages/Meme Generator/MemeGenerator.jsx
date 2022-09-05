@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './style.css';
+import styles from './style.module.css'
 import Header from './components/Header'
 import Meme from './components/Meme'
 function App() {
   return (
-    <div className="App">
+    <div className={styles["app"]}>
       <Header />
       <Meme />
     </div>

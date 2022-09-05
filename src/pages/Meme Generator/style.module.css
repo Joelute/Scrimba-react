@@ -1,11 +1,9 @@
-* {
-    box-sizing: border-box;
-}
 
-body {
+.app {
     margin: 0;
     font-family: 'Karla', sans-serif;
-    max-width: 550px;
+    max-width: 48rem;
+    margin: 0 auto;
 }
 
 .header {
@@ -34,7 +32,9 @@ body {
 }
 
 .main {
+
     padding: 2rem;
+    margin: 0 auto;
 }
 
 .form {
