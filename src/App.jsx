@@ -28,7 +28,7 @@ function App() {
         <Route path='/travel-journal' element={<TravelJournal />} />
         <Route path='/meme-generator' element={<MemeGenerator />} />
         <Route path='/tenzies' element={<Tenzies />} />
-        <Route path='/picsome' element={<PicSome />} />
+        <Route path='/picsome/*' element={<PicSome />} />
       </Routes>
     </div>
   )

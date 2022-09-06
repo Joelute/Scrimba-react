@@ -1,11 +1,26 @@
-import Header from './component/Header'
+import styled from 'styled-components'
+import { ContextProvider } from './useContext'
 import styles from './PicSome.module.css'
+import {Routes, Route} from 'react-router-dom'
+import Cart from './component/Cart'
+import Photos from './component/Photos'
+import Header from './component/Header'
 
 export default function App() {
+    
     return (
-        <div className ={styles['app']}>
-            <Header />
-            <h1>Home Page</h1>
-        </div>
+        <ContextProvider>
+            <Container>
+                <Header />
+                <Routes>
+                    <Route exact path = '/' element = {<Photos />} />
+                    <Route path = '/cart' element = {<Cart />} />
+                </Routes>
+            </Container>
+        </ContextProvider>
     )
 }
+
+const Container = styled.div`
+    font-family: 'Oswald', sans-serif;
+`
