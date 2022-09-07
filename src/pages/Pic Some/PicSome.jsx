@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { ContextProvider } from './useContext'
 import styles from './PicSome.module.css'
 import {Routes, Route} from 'react-router-dom'
-import Cart from './component/Cart'
-import Photos from './component/Photos'
+import Cart from './pages/Cart'
+import Photos from './pages/Photos'
 import Header from './component/Header'
 
 export default function App() {

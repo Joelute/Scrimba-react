@@ -1,16 +1,23 @@
 import styled from "styled-components"
 import {Link} from 'react-router-dom'
+import { useContext } from 'react'
+import { Context } from '../useContext'
 
 function Header() {
+
+    const {cartItems} = useContext(Context)
+
     return (
         <StyledHeader>
             <Link to='/picsome/'><h2>Pic Some</h2></Link>
-            <Link to='/picsome/cart'><ShoppingIcon></ShoppingIcon></Link>
+            <Link to='/picsome/cart'>{cartItems.length ? <FilledCart/>: <ShoppingCart />}</Link>
         </StyledHeader>
     )
 }
 
-const ShoppingIcon = styled.i.attrs(() => ({ className: "ri-shopping-cart-line ri-fw ri-2x" }))``
+const ShoppingCart = styled.i.attrs(() => ({ className: "ri-shopping-cart-line ri-fw ri-2x" }))``
+
+const FilledCart = styled.i.attrs(() => ({ className: 'ri-shopping-cart-fill ri-fw ri-2x'}))``
 
 const StyledHeader = styled.header`
     display: flex;
