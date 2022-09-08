@@ -30,8 +30,8 @@ const Container = styled.main`
     padding: 10px;
     display: grid;
     grid-gap: 2px;
-    grid-auto-rows: 100px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-rows: 20vh;
+    grid-template-columns: repeat(auto-fit, minmax(20vh, 1fr));
     grid-auto-flow: dense;
 `
 

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { ContextProvider } from './useContext'
-import styles from './PicSome.module.css'
 import {Routes, Route} from 'react-router-dom'
 import Cart from './pages/Cart'
 import Photos from './pages/Photos'
@@ -23,4 +22,9 @@ export default function App() {
 
 const Container = styled.div`
     font-family: 'Oswald', sans-serif;
+    margin-left: 5rem;
+    a {
+        text-decoration: none;
+        color: #EFFBFE
+    }
 `

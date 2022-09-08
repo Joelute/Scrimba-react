@@ -23,8 +23,8 @@ const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--pink);
-    color: var(--light-blue);
+    background-color: #F47B6E;
+    color: #EFFBFE;
     padding: 0 2rem;
     -webkit-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
     -moz-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);

@@ -22,6 +22,8 @@ function Images ({className, img, id, isFavorite}) {
             <StyledPlus onClick={() => addCartItems(img, id, isFavorite)}/>
         )
     }
+
+    console.log(id)
     
     return (
         <StyledDiv className={className} 
@@ -65,7 +67,7 @@ const StyledImage = styled.img`
 `
 
 const StyledHeart = styled.i.attrs(() => ({ className: 'ri-heart-line' }))`
-    color: var(--red);
+    color: #EA453C;
     font-size: 1.2rem;
     position: absolute;
     top: 5px;
@@ -75,7 +77,7 @@ const StyledHeart = styled.i.attrs(() => ({ className: 'ri-heart-line' }))`
 
 const StyledFilledHeart = styled.i.attrs(() => ({ className: 'ri-heart-fill'}))`
     opacity: .7;
-    color: var(--red);
+    color: #EA453C;
     font-size: 1.2rem;
     position: absolute;
     top: 5px;
@@ -84,7 +86,7 @@ const StyledFilledHeart = styled.i.attrs(() => ({ className: 'ri-heart-fill'}))`
 `
 
 const StyledPlus = styled.i.attrs(() => ({ className: 'ri-add-circle-line' }))`
-    color: var(--blue);
+    color: #ACE6EC;
     font-size: 1.2rem;
     position: absolute;
     top: 5px;
@@ -92,7 +94,7 @@ const StyledPlus = styled.i.attrs(() => ({ className: 'ri-add-circle-line' }))`
     cursor: pointer;
 `
 const StyledCart = styled.i.attrs(() => ({ className: 'ri-shopping-cart-fill' }))`
-    color: var(--blue);
+    color: #ACE6EC;
     font-size: 1.2rem;
     position: absolute;
     top: 5px;
