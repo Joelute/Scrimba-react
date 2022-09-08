@@ -1,0 +1,90 @@
+.BusinessCard {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: Karla, sans-serif;
+    
+}
+
+.card {
+    display: flex;
+    width: 550px;
+    margin: 0 auto;
+    justify-items: center !important;
+    flex-direction: column;
+    background-color: #292829;
+}
+
+.info--profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3rem 3rem 0 0;
+}
+
+.sub--title {
+    text-align: left;
+    font-size: 1.7rem;
+    color: white;
+    margin: 0.2rem 2rem;
+    padding: 0.5rem;
+    font-weight: 700;
+}
+
+.text--content {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0.2rem 2.5rem;
+    justify-items: left;
+    font-weight: 300;
+    text-align: left;
+}
+
+.info--name {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.info--job {
+    font-size: 1.3rem;
+    color: orange;
+}
+
+.info--div--button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.info--button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 13rem;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    margin: 0.5rem 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    align-content: center;
+}
+
+.card--top {
+    border-radius: 3rem 3rem 0 0;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+.card--bottom {
+    border-radius: 0 0 3rem 3rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info--i--icon {
+    font-size: 1.4rem;
+}
+
