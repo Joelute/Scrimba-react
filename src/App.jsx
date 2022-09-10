@@ -15,12 +15,12 @@ function App() {
   return (
     <div>
       <NavBar>
-        <StyledLink to='/'><i class="fa-solid fa-house"></i><StyledText>Home</StyledText></StyledLink>
-        <StyledLink to='/business-card'><i class="fa-solid fa-id-badge"></i><StyledText>Business Card</StyledText></StyledLink>
-        <StyledLink to='/travel-journal'><i class="fa-solid fa-book"></i><StyledText>Travel Journal</StyledText></StyledLink>
-        <StyledLink to='/meme-generator'><i class="fa-solid fa-face-laugh-squint"></i><StyledText>Meme Generator</StyledText></StyledLink>
-        <StyledLink to='/tenzies'><i class="fa-solid fa-dice"></i><StyledText>Tenzies</StyledText></StyledLink>
-        <StyledLink to='/picsome'><i class="fa-solid fa-image"></i><StyledText>Pic Some</StyledText></StyledLink>
+        <StyledLink to='/'><i className="fa-solid fa-house"></i><StyledText>Home</StyledText></StyledLink>
+        <StyledLink to='/business-card'><i className="fa-solid fa-id-badge"></i><StyledText>Business Card</StyledText></StyledLink>
+        <StyledLink to='/travel-journal'><i className="fa-solid fa-book"></i><StyledText>Travel Journal</StyledText></StyledLink>
+        <StyledLink to='/meme-generator'><i className="fa-solid fa-face-laugh-squint"></i><StyledText>Meme Generator</StyledText></StyledLink>
+        <StyledLink to='/tenzies'><i className="fa-solid fa-dice"></i><StyledText>Tenzies</StyledText></StyledLink>
+        <StyledLink to='/picsome'><i className="fa-solid fa-image"></i><StyledText>Pic Some</StyledText></StyledLink>
       </NavBar>
       
       <Routes>
