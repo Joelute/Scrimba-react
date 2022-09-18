@@ -15,19 +15,17 @@ function App() {
   return (
     <div>
       <NavBar>
-        <StyledLink to='/'><i className="fa-solid fa-house"></i><StyledText>Home</StyledText></StyledLink>
-        <StyledLink to='/business-card'><i className="fa-solid fa-id-badge"></i><StyledText>Business Card</StyledText></StyledLink>
-        <StyledLink to='/travel-journal'><i className="fa-solid fa-book"></i><StyledText>Travel Journal</StyledText></StyledLink>
-        <StyledLink to='/meme-generator'><i className="fa-solid fa-face-laugh-squint"></i><StyledText>Meme Generator</StyledText></StyledLink>
-        <StyledLink to='/tenzies'><i className="fa-solid fa-dice"></i><StyledText>Tenzies</StyledText></StyledLink>
-        <StyledLink to='/picsome'><i className="fa-solid fa-image"></i><StyledText>Pic Some</StyledText></StyledLink>
+        <StyledLink to='/'><StyledIcon className="fa-solid fa-house"></StyledIcon><StyledText>Home</StyledText></StyledLink>
+        <StyledLink to='/business-card'><StyledIcon className="fa-solid fa-id-badge"></StyledIcon><StyledText>Business Card</StyledText></StyledLink>
+        <StyledLink to='/travel-journal'><StyledIcon className="fa-solid fa-book"></StyledIcon><StyledText>Travel Journal</StyledText></StyledLink>
+        <StyledLink to='/tenzies'><StyledIcon className="fa-solid fa-dice"></StyledIcon><StyledText>Tenzies</StyledText></StyledLink>
+        <StyledLink to='/picsome'><StyledIcon className="fa-solid fa-image"></StyledIcon><StyledText>Pic Some</StyledText></StyledLink>
       </NavBar>
       
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/business-card' element={<BusinessCard />} />
         <Route path='/travel-journal' element={<TravelJournal />} />
-        <Route path='/meme-generator' element={<MemeGenerator />} />
         <Route path='/tenzies' element={<Tenzies />} />
         <Route path='/picsome/*' element={<PicSome />} />
       </Routes>
@@ -38,10 +36,10 @@ function App() {
 export default App
 
 const NavBar = styled.nav`
-  width: 5rem;
+  width: 5em;
   height: 100vh;
   position: fixed;
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
@@ -50,18 +48,22 @@ const NavBar = styled.nav`
   background-color: white;
   z-index: 100;
 
-  &:hover {
-    width: 17rem;
+  @media (min-width:601px) {
+    &:hover {
+      width: 17em;
+    }
+
+    &:hover span {
+      display:block;
+    }  
   }
 
-  i {
-    margin: 0 1.5rem;
-    min-width: 2rem;
-    font-size:1.5rem;
-  }
-
-  &:hover span {
-    display:block;
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 4em;
+    flex-direction: row;
+    bottom: 0;
+    justify-content: space-around;
   }
 `
 
@@ -75,6 +77,22 @@ const StyledLink = styled(Link)`
 
   &:hover {
     opacity: 0.75;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 1.2em 0;
+  }
+`
+
+const StyledIcon = styled.i.attrs(props => ({ className: props.className}))`
+  margin: 0 1.5rem;
+  min-width: 2rem;
+  font-size:1.5rem;
+
+  @media (max-width: 600px) {
+    margin: 0 auto;
+    padding: 0 .8em;
   }
 `
 

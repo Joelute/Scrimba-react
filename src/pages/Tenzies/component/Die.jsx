@@ -1,4 +1,4 @@
-import dieStyles from '../Tenzies.module.css'
+import styled from 'styled-components'
 
 export default function Die({value, id, isHeld, changeHeld, disabled}) {
     const styles = {
@@ -7,8 +7,26 @@ export default function Die({value, id, isHeld, changeHeld, disabled}) {
     }
 
     return (
-        <div className={dieStyles['game--die']} onClick={disabled? '' : () => changeHeld(id)} style = {styles}>
-            <h2 className = {dieStyles['die--number']}>{value}</h2>
-        </div>
+        <GameDie onClick={disabled? '' : () => changeHeld(id)} style = {styles}>
+            <DieNumber>{value}</DieNumber>
+        </GameDie>
     )
 }
+
+const GameDie = styled.div`
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 4px;
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    background-color: white;
+`
+
+const DieNumber = styled.h2` 
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    height: 100%;
+`

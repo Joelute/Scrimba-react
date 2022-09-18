@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar';
 import Card from './components/Card'
 import Data from './data'
-import styles from './TravelJournal.module.css'
+import styled from 'styled-components';
 
 function App() {
   let cardElements = Data.map(cardData => {
@@ -16,11 +16,24 @@ function App() {
   )})
 
   return (
-    <div className={styles["TravelJournal"]}>
+    <AppBody>
       <Navbar />
       {cardElements}
-    </div>
+    </AppBody>
   );
 }
 
 export default App;
+
+const AppBody = styled.div`
+
+  font-family: Inter, sans-serif;
+  
+  margin: 0 auto;
+  margin-left: 5em;
+  
+  @media (max-width: 600px) {
+    margin-left: 0em;
+    margin-bottom: 5em;
+  }
+`

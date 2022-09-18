@@ -1,7 +1,8 @@
 import Die from './component/Die';
-import styles from './Tenzies.module.css'
 import { useEffect, useRef, useState } from 'react';
 import Confetti from 'react-confetti'
+import styled from 'styled-components';
+
 
 function App() {
 
@@ -92,36 +93,127 @@ function App() {
   }, [dice])
 
   return (
-    <div className={styles['container']}>
-      <main className={styles['game']}>
+    <Container>
+
         {tenzies && <Confetti></Confetti>}
         {playGame ?
-         <div className={styles['game--board']}>
-          <div className={styles['score--container']}>
-            <div className={styles['score--time']}>
-              <h1 className={styles['score--title']}>Time</h1>
-              <h2 className={styles['score--value']}>{timer}</h2>
+         <GameBoard>
+          <ScoreContainer>
+            <div>
+              <ScoreTitle>Time</ScoreTitle>
+              <ScoreValue>{timer}</ScoreValue>
             </div>
-            <div className={styles['score--rolls']}>
-              <h1 className={styles['score--title']}>Total rolls</h1>
-              <h2 className={styles['score--value']}>{totalRoll}</h2>
+            <div>
+              <ScoreTitle>Total rolls</ScoreTitle>
+              <ScoreValue>{totalRoll}</ScoreValue>
             </div>
-          </div>
-          <div className={styles['die--container']}>
+          </ScoreContainer>
+          <DieContainer>
             {dieElement}
-          </div>
-          <button className={styles['game--button']} onClick={tenzies? newGame: rollDice}>{tenzies? 'New Game': 'Roll'}</button>
-        </div> :
-        <div className={styles['game--board']}>
-          <h1 className={styles['game--title']}>Tenzies</h1>
-          <h2 className={styles['game--description']}>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</h2>
-          <button className={styles['game--button']} onClick = {startGame}>Play</button>
-        </div>
+          </DieContainer>
+          <GameButton onClick={tenzies? newGame: rollDice}>{tenzies? 'New Game': 'Roll'}</GameButton>
+        </GameBoard> :
+        <GameBoard>
+          <GameTitle>Tenzies</GameTitle>
+          <GameDescription>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</GameDescription>
+          <GameButton onClick = {startGame}>Play</GameButton>
+        </GameBoard>
         }
-      </main>
-    </div>
+    </Container>
       
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  margin: 0 auto;
+  margin-left: 5em;
+  font-family: Karla, sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+
+`
+
+const GameBoard = styled.div`
+  display: flex;
+  padding: 4em;
+  border-radius: .75em;
+  background-color: #f5f5f5;
+  height: 35em;
+  width: 90%;
+  max-width: 35em;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 .25rem 0 rgba(0, 0, 0, .5);
+`
+
+const ScoreContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto;
+  gap:8em;
+  margin-bottom: 4rem;
+`
+
+const ScoreTitle = styled.h1`
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-top: 0;
+
+`
+
+const ScoreValue = styled.h2`
+  text-align: center;
+  font-weight: 100;
+  color: #4A4E74;
+  font-size: 2.5rem;
+  margin-top: 0;
+
+`
+
+const DieContainer = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  gap: 2em;
+  margin-bottom: 2rem;
+
+  @media (max-width: 480px) {
+    gap:1.2em;
+  }
+`
+
+const GameButton = styled.div`
+  display: flex;
+  margin-top: 2rem;
+  height: 3rem;
+  width: 14rem;
+  font-size: 2.5rem;
+  color: #ffffff;
+  background-color: #5035FF;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.15);
+
+`
+
+const GameTitle = styled.h1`
+  color: #2B283A;
+  font-size: 3rem;
+  margin-top: 5rem;
+  text-align: center;
+`
+
+const GameDescription = styled.h2`
+  color: #4A4E74;
+  font-size: 1.5rem;
+  margin: 0 0 4rem 0;
+  text-align: center;
+  font-weight: 100;
+`
