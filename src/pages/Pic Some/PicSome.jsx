@@ -22,9 +22,13 @@ export default function App() {
 
 const Container = styled.div`
     font-family: 'Oswald', sans-serif;
-    margin-left: 5rem;
+    
     a {
         text-decoration: none;
         color: #EFFBFE
+    }
+    
+    @media (min-width: 601px) {
+        margin-left: 5rem;
     }
 `

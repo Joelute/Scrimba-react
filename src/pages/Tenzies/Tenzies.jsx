@@ -128,13 +128,16 @@ export default App;
 
 const Container = styled.div`
   margin: 0 auto;
-  margin-left: 5em;
   font-family: Karla, sans-serif;
   display: flex;
   justify-content: center;
+  
   height: 100vh;
   align-items: center;
 
+  @media (min-width: 601px) {
+    margin-left: 5em;
+  }
 `
 
 const GameBoard = styled.div`
@@ -148,7 +151,17 @@ const GameBoard = styled.div`
   flex-direction: column;
   align-items: center;
   box-shadow: 0 0 .25rem 0 rgba(0, 0, 0, .5);
+
+  @media (max-width:500px) {
+    width: 100vh;
+    height: 100vh;
+    justify-content:center;
+    padding: 0;
+    border-radius: 0;
+
+  }
 `
+
 
 const ScoreContainer = styled.div`
   display: grid;
@@ -171,7 +184,6 @@ const ScoreValue = styled.h2`
   color: #4A4E74;
   font-size: 2.5rem;
   margin-top: 0;
-
 `
 
 const DieContainer = styled.div`
@@ -180,7 +192,7 @@ const DieContainer = styled.div`
   gap: 2em;
   margin-bottom: 2rem;
 
-  @media (max-width: 480px) {
+  @media (max-width: 500px) {
     gap:1.2em;
   }
 `
@@ -216,4 +228,5 @@ const GameDescription = styled.h2`
   margin: 0 0 4rem 0;
   text-align: center;
   font-weight: 100;
+  width: 95%;
 `

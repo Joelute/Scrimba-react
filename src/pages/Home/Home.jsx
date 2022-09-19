@@ -17,7 +17,7 @@ const Typing = keyframes`
         width: 0;
     }
     50%, 80%{
-        width: 10ch;
+        width: 9.2ch;
     }
 `
 
@@ -28,10 +28,13 @@ const Blink = keyframes`
 `
 const Container = styled.div`
     display:flex;
-    margin-left: 5rem;
     height: 100vh;
     align-items: center;
     justify-content: center;
+    
+    @media (min-width: 601px) {
+        margin-left: 5rem;
+    }
 `
 
 
@@ -41,7 +44,7 @@ const TypingDiv = styled.div`
     font-size: 4rem;
     white-space: nowrap;
     overflow: hidden;
-    animation:  ${Typing} 4s steps(144) infinite 1s,
+    animation:  ${Typing} 3s steps(144) infinite 1s,
                 ${Blink} .5s step-end infinite alternate;
     border-right: 3px solid;
     `
